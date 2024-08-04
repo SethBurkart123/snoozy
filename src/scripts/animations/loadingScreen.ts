@@ -1,8 +1,13 @@
 import { gsap } from 'gsap';
 
 function hideLoadingScreen() {
-  // trigger window-wide event
-  window.dispatchEvent(new Event('loading-screen-hidden'));
+  gsap.to("#loading-screen > div", {
+    y: "-100vh",
+    scale: 1.5,
+    opacity: 0,
+    duration: 1,
+    ease: "circ.inOut",
+  });
 
   gsap.to("#loading-screen", {
     y: "100%",

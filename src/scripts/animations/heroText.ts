@@ -27,6 +27,14 @@ export const heroText = async () => {
     delay: 1
   });
 
+  gsap.from(heroText.querySelector('button'), {
+    opacity: 0,
+    y: 50,
+    ease: "back.out(1.5)",
+    duration: 1,
+    delay: 2
+  });
+
   if (heroText) {
     //await delay(10000);
     heroText.style.opacity = '1';
