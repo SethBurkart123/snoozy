@@ -1,18 +1,52 @@
 ---
 ---
 
-<div class="py-1 h-16 fixed w-full top-0 z-50 px-32">
+<div id="topbar" class="py-1 h-16 fixed w-full top-0 z-50 px-32">
 	<nav class="flex h-full justify-center font-cinzel items-center">
 		<ul class="flex gap-4 text-xl bg-[#DFDFDF]/60 backdrop-blur-md rounded-full h-full p-2 place-items-center px-12">
 			<li>
-				<a href="/">Home</a>
+				<button id="home">Home</button>
 			</li>
 			<li>
-				<a href="/">About</a>
-			</li>
-			<li>
-				<a href="/">Contact</a>
+				<button id="shop">Shop</button>
 			</li>
 		</ul>
 	</nav>
 </div>
+
+<script>
+import { gsap } from 'gsap';
+import { delay } from '../scripts/utils';
+
+function showLoadingScreen() {
+	gsap.to("#loading-screen > div", {
+    y: "0",
+    scale: 1,
+    opacity: 1,
+    duration: 1,
+    ease: "circ.inOut",
+  });
+
+  gsap.to("#loading-screen", {
+    y: 0,
+    duration: 1,
+    ease: "circ.inOut",
+  });
+}
+
+const home = document.getElementById('home');
+const shop = document.getElementById('shop');
+
+home?.addEventListener('click', async () => {
+	showLoadingScreen();
+	await delay(1000);
+	window.location.href = '/';
+});
+
+shop?.addEventListener('click', async () => {
+	showLoadingScreen();
+	await delay(1000);
+	window.location.href = '/shop';
+});
+
+</script>
