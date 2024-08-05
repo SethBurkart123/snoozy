@@ -15,24 +15,8 @@
 </div>
 
 <script>
-import { gsap } from 'gsap';
+import { showLoadingScreen } from '../scripts/animations/loadingScreen';
 import { delay } from '../scripts/utils';
-
-function showLoadingScreen() {
-	gsap.to("#loading-screen > div", {
-    y: "0",
-    scale: 1,
-    opacity: 1,
-    duration: 1,
-    ease: "circ.inOut",
-  });
-
-  gsap.to("#loading-screen", {
-    y: 0,
-    duration: 1,
-    ease: "circ.inOut",
-  });
-}
 
 const home = document.getElementById('home');
 const shop = document.getElementById('shop');

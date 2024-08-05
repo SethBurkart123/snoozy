@@ -11,12 +11,23 @@
 				Beyond Ordinary Comfort
 			</h2>
 
-			<button class="mt-12 shop">
-				<a class="bg-white text-black px-4 py-2 rounded-full group" href="/shop">
+			<button class="mt-12 shop bg-white text-black px-4 py-2 rounded-full">
 					Shop Now <span class="text-black text-xl font-semibold">→</span>
-				</a>
 			</button>
 		</div>
 		<img src="/background.webp" alt="background" id="heroBackground" class="w-full h-full preloadImg rounded-[2.5rem] object-cover" />
 	</div>
 </div>
+
+<script>
+	import { showLoadingScreen } from '../scripts/animations/loadingScreen';
+	import { delay } from '../scripts/utils';
+	
+	const shop = document.querySelector('.shop');
+	
+	shop?.addEventListener('click', async () => {
+		showLoadingScreen();
+		await delay(1000);
+		window.location.href = '/shop';
+	});
+</script>

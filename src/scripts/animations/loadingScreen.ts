@@ -1,5 +1,21 @@
 import { gsap } from 'gsap';
 
+export function showLoadingScreen() {
+	gsap.to("#loading-screen > div", {
+    y: "0",
+    scale: 1,
+    opacity: 1,
+    duration: 1,
+    ease: "circ.inOut",
+  });
+
+  gsap.to("#loading-screen", {
+    y: 0,
+    duration: 1,
+    ease: "circ.inOut",
+  });
+}
+
 function hideLoadingScreen() {
   gsap.to("#loading-screen > div", {
     y: "-100vh",
