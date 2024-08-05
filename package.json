@@ -3,8 +3,8 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
+    "dev": "astro dev --host",
+    "start": "astro dev --host",
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro"
@@ -17,6 +17,7 @@
     "@fontsource/cinzel": "^5.0.13",
     "@fontsource/inter": "^5.0.20",
     "@fontsource/syne": "^5.0.20",
+    "@tailwindcss/typography": "^0.5.13",
     "astro": "^4.12.2",
     "astro-lenis": "^1.0.0",
     "gsap": "^3.12.5",

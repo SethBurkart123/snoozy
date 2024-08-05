@@ -1,15 +1,13 @@
 <div class="h-[200vh] features w-screen bg-gray-200 noise-background-2 pt-64">
-  <div class="flex flex-col feature-div gap-4 text-center justify-center font-cinzel items-center px-32 sticky top-1/2 -translate-y-1/2">
-    <p class="text-6xl font-bold feature-title">The first jumper that keeps you cool in the summer and warm in the winter.</p>
-    <button class="my-4 shop">
-      <a class="bg-white text-black px-4 py-2 rounded-full group" href="/shop">
-        Shop Now <span class="text-black text-xl font-semibold">→</span>
-      </a>
+  <div class="flex flex-col feature-div gap-4 text-center justify-center font-playfair items-center md:px-32 px-12 sticky top-1/2 -translate-y-1/2">
+    <p class="sm:text-6xl text-5xl font-bold feature-title">The first jumper that keeps you cool in the summer and warm in the winter.</p>
+    <button class="my-4 shop bg-white text-black px-4 py-2 rounded-full">
+      Shop Now <span class="text-black text-xl font-semibold">→</span>
     </button>
   </div>
 </div>
 
-<div class="w-screen bg-gray-200 flex flex-col gap-4 text-center justify-center font-syne items-center px-32">
+<div class="w-screen mb-32 bg-gray-200 flex flex-col gap-4 text-center justify-center font-syne items-center px-4 sm:px-16 md:px-32">
   <div id="video-group" class="bg-gray-200 w-full aspect-video overflow-hidden relative group cursor-pointer">
     <div id="playButton" class="absolute flex justify-center items-center group-hover:scale-110 z-10 transition-all duration-300 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full border border-black/10 bg-black/5 backdrop-blur-lg">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" height="32" viewBox="0 0 32 32" width="32"><path d="m11.09 5.00849 14.3302 9.31461c1.2133.7887 1.2133 2.5651 0 3.3538l-14.3302 9.3146c-1.33053.8648-3.09-.09-3.09-1.6769v-18.62923c0-1.58687 1.75947-2.54171 3.09-1.67688z" fill="#fff"/></svg>
@@ -25,9 +23,6 @@
     </video-js>
   </div>
 </div>
-<!-- <div class="relative h-0">
-  <div class="w-screen bg-gray-200 h-[50vh] absolute -translate-y-[50vh] -z-10"></div>
-</div> -->
 
 <script>
   import videojs from 'video.js';
@@ -35,12 +30,14 @@
   import { showLoadingScreen } from '../scripts/animations/loadingScreen';
 	import { delay } from '../scripts/utils';
 	
-	const shop = document.getElementById('shop');
+	const shop = document.querySelectorAll('.shop');
 	
-	shop?.addEventListener('click', async () => {
-		showLoadingScreen();
-		await delay(1000);
-		window.location.href = '/shop';
+	shop?.forEach(button => {
+		button.addEventListener('click', async () => {
+			showLoadingScreen();
+			await delay(1000);
+			window.location.href = '/shop';
+		});
 	});
 
   document.addEventListener('DOMContentLoaded', () => {

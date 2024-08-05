@@ -1,14 +1,17 @@
 ---
 ---
 
-<div id="topbar" class="py-1 h-16 fixed w-full top-0 z-50 px-32">
-	<nav class="flex h-full justify-center font-cinzel items-center">
+<div id="topbar" class="py-1 h-16 fixed w-full top-0 z-[100] px-32">
+	<nav class="flex h-full justify-center font-playfair items-center">
 		<ul class="flex gap-4 text-xl bg-[#DFDFDF]/60 backdrop-blur-md rounded-full h-full p-2 place-items-center px-12">
 			<li>
 				<button id="home">Home</button>
 			</li>
 			<li>
 				<button id="shop">Shop</button>
+			</li>
+			<li>
+				<button id="about">About Us</button>
 			</li>
 		</ul>
 	</nav>
@@ -20,6 +23,7 @@ import { delay } from '../scripts/utils';
 
 const home = document.getElementById('home');
 const shop = document.getElementById('shop');
+const about = document.getElementById('about');
 
 home?.addEventListener('click', async () => {
 	showLoadingScreen();
@@ -31,6 +35,12 @@ shop?.addEventListener('click', async () => {
 	showLoadingScreen();
 	await delay(1000);
 	window.location.href = '/shop';
+});
+
+about?.addEventListener('click', async () => {
+	showLoadingScreen();
+	await delay(1000);
+	window.location.href = '/about';
 });
 
 </script>

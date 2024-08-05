@@ -1,0 +1,55 @@
+---
+import Header from '../components/Header.astro';
+import Layout from '../layouts/Layout.astro';
+import MarkdownContent from '../content/main/about.md';
+---
+
+<script>
+  import { loadingScreen } from '../scripts/animations/loadingScreen';
+
+	loadingScreen();
+</script>
+
+<Layout title="About | Snoozier">
+  <Header />
+  <div class="flex flex-col items-center py-32 justify-center">
+    <div class="prose prose-xl">
+      <MarkdownContent />
+    </div>
+  </div>
+</Layout>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  import SplitType from 'split-type';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  /* split each word in the prose */
+  const split = new SplitType('.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6, .prose p, .prose blockquote, .prose code, .prose pre, .prose table, .prose th, .prose td', {
+    types: 'words',
+  });
+
+  gsap.fromTo([...split.words, ...document.querySelectorAll('.prose li')],  {
+    opacity: 0,
+    y: 10,
+  }, {
+    opacity: 1,
+    y: 0,
+    stagger: 0.01,
+    delay: 1,
+    ease: 'power2.out'
+  });
+</script>
+
+<style>
+  .prose h1,
+  .prose h2,
+  .prose h3,
+  .prose h4,
+  .prose h5,
+  .prose h6 {
+		font-family: 'Playfair Display Variable', serif;
+  }
+</style>

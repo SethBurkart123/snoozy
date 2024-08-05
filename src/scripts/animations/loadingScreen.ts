@@ -5,14 +5,14 @@ export function showLoadingScreen() {
     y: "0",
     scale: 1,
     opacity: 1,
-    duration: 1,
-    ease: "circ.inOut",
+    duration: 0.5,
+    ease: "sine.inOut",
   });
 
   gsap.to("#loading-screen", {
     y: 0,
-    duration: 1,
-    ease: "circ.inOut",
+    duration: 0.5,
+    ease: "sine.inOut",
   });
 }
 
