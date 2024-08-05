@@ -29,7 +29,6 @@ export const heroScroll = async () => {
         start: "top top",
         end: "bottom top",
         scrub: true,
-        markers: true,
       }
     }
   );
@@ -55,8 +54,21 @@ export const heroScroll = async () => {
     duration: 1,
     scrollTrigger: {
       trigger: ".features",
-      start: "top top",
+      start: "middle top",
       end: "bottom 110%",
+      scrub: true
+    }
+  });
+
+  gsap.from(".feature-div > button", {
+    opacity: 0,
+    y: 50,
+    ease: "circ.out",
+    duration: 1,
+    scrollTrigger: {
+      trigger: ".features",
+      start: "80% bottom",
+      end: "bottom 90%",
       scrub: true
     }
   });

@@ -1,16 +1,21 @@
-<div class="h-[200vh] features w-screen bg-gray-200 noise-background-2">
-  <div class="flex text-center justify-center font-cinzel items-center px-32 h-screen sticky top-0">
+<div class="h-[200vh] features w-screen bg-gray-200 noise-background-2 pt-64">
+  <div class="flex flex-col feature-div gap-4 text-center justify-center font-cinzel items-center px-32 sticky top-1/2 -translate-y-1/2">
     <p class="text-6xl font-bold feature-title">The first jumper that keeps you cool in the summer and warm in the winter.</p>
+    <button class="my-4 shop">
+      <a class="bg-white text-black px-4 py-2 rounded-full group" href="/shop">
+        Shop Now <span class="text-black text-xl font-semibold">→</span>
+      </a>
+    </button>
   </div>
 </div>
 
-<div class="h-screen w-screen bg-gray-200 flex flex-col gap-4 text-center justify-center font-syne items-center px-32">
-  <p class="text-6xl font-bold feature-title">Watch the video</p>
-  <div id="video-group" class="bg-gray-200 overflow-hidden relative group cursor-pointer">
+<div class="w-screen bg-gray-200 flex flex-col gap-4 text-center justify-center font-syne items-center px-32">
+  <div id="video-group" class="bg-gray-200 w-full aspect-video overflow-hidden relative group cursor-pointer">
     <div id="playButton" class="absolute flex justify-center items-center group-hover:scale-110 z-10 transition-all duration-300 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full border border-black/10 bg-black/5 backdrop-blur-lg">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" height="32" viewBox="0 0 32 32" width="32"><path d="m11.09 5.00849 14.3302 9.31461c1.2133.7887 1.2133 2.5651 0 3.3538l-14.3302 9.3146c-1.33053.8648-3.09-.09-3.09-1.6769v-18.62923c0-1.58687 1.75947-2.54171 3.09-1.67688z" fill="#fff"/></svg>
     </div>
-    <video-js id="my-video" class="video-js vjs-default-skin vjs-big-play-centered aspect-video object-cover group-hover:scale-[99%] transition-all duration-300 rounded-2xl overflow-hidden" controls preload="auto" width="640" height="360" poster="/background.webp" data-setup="{}">
+
+    <video-js id="my-video" class="video-js vjs-default-skin vjs-big-play-centered aspect-video object-cover group-hover:scale-[99%] transition-all w-full h-full duration-300 rounded-2xl overflow-hidden" controls preload="auto" width="640" height="360" poster="/background.webp" data-setup="{}">
       <source src="/video.mp4" type="video/mp4" />
       <p class="vjs-no-js">
         To view this video please enable JavaScript, and consider upgrading to a
@@ -20,6 +25,9 @@
     </video-js>
   </div>
 </div>
+<!-- <div class="relative h-0">
+  <div class="w-screen bg-gray-200 h-[50vh] absolute -translate-y-[50vh] -z-10"></div>
+</div> -->
 
 <script>
   import videojs from 'video.js';
