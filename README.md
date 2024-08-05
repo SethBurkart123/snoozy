@@ -2,6 +2,8 @@
 
 Visible at https://snoozier.vercel.app
 
+![SCR-20240805-tumu](https://github.com/user-attachments/assets/d6cea0af-a1f5-4c53-8531-51c5c7cb5ad9)
+
 ## 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:
