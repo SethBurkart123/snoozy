@@ -1,4 +1,4 @@
-<img width="1414" alt="image" src="https://github.com/user-attachments/assets/50ea75df-1f7c-424b-ae54-da8308749935"># Snoozier - The revolutionary jumper that adapts to you 24/7
+# Snoozier - The revolutionary jumper that adapts to you 24/7
 
 Visible at https://snoozier.vercel.app
 
