@@ -27,7 +27,7 @@ export const heroText = async () => {
     delay: 1
   });
 
-  gsap.from(heroText.querySelector('button'), {
+  gsap.from(heroText.querySelector('.shop'), {
     opacity: 0,
     y: 50,
     ease: "back.out(1.5)",
@@ -36,7 +36,6 @@ export const heroText = async () => {
   });
 
   if (heroText) {
-    //await delay(10000);
     heroText.style.opacity = '1';
   }
 }

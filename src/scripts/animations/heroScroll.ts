@@ -1,5 +1,6 @@
 import { gsap } from 'gsap';
 import { delay } from '../utils';
+import SplitType from 'split-type';
 
 export const heroScroll = async () => {
   // Hero image parallax effect
@@ -44,20 +45,19 @@ export const heroScroll = async () => {
     }
   });
 
+  const HeroText = new SplitType('.feature-title', { types: 'words' });
 
-  await delay(800)
-  gsap.fromTo(".heroText", 
-    { opacity: 0, y: 50 },
-    { 
-      opacity: 1, 
-      y: 0, 
-      duration: 1,
-      scrollTrigger: {
-        trigger: ".hero",
-        start: "top center",
-        end: "center center",
-        scrub: true
-      }
+  gsap.fromTo(HeroText.words, { opacity: 0, y: 50 }, {
+    opacity: 1,
+    y: 0,
+    stagger: 0.1,
+    ease: "circ.out",
+    duration: 1,
+    scrollTrigger: {
+      trigger: ".features",
+      start: "top top",
+      end: "bottom 110%",
+      scrub: true
     }
-  );
+  });
 }
